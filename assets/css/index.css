@@ -1,0 +1,11 @@
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+}
+
+.header-logo {
+    font-family: Satisfy;
+    font-size: 5rem;
+}
