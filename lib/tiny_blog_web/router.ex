@@ -16,8 +16,9 @@ defmodule TinyBlogWeb.Router do
   scope "/", TinyBlogWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", ArticleController, :index
     resources "/users", UserController, except: [:show]
+    resources "/articles", ArticleController
   end
 
   # Other scopes may use custom stacks.

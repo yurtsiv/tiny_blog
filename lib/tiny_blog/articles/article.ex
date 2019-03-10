@@ -5,10 +5,8 @@ defmodule TinyBlog.Articles.Article do
 
   schema "articles" do
     field :body, :string
-    field :createdAt, :date
     field :title, :string
-    field :updatedAt, :date
-    field :author, :id
+    has_one :author, User
 
     timestamps()
   end
@@ -16,7 +14,7 @@ defmodule TinyBlog.Articles.Article do
   @doc false
   def changeset(article, attrs) do
     article
-    |> cast(attrs, [:title, :body, :createdAt, :updatedAt])
-    |> validate_required([:title, :body, :createdAt, :updatedAt])
+    |> cast(attrs, [:title, :body])
+    |> validate_required([:title, :body]) 
   end
 end

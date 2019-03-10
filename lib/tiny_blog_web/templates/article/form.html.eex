@@ -13,14 +13,6 @@
   <%= text_input f, :body %>
   <%= error_tag f, :body %>
 
-  <%= label f, :createdAt %>
-  <%= date_select f, :createdAt %>
-  <%= error_tag f, :createdAt %>
-
-  <%= label f, :updatedAt %>
-  <%= date_select f, :updatedAt %>
-  <%= error_tag f, :updatedAt %>
-
   <div>
     <%= submit "Save" %>
   </div>

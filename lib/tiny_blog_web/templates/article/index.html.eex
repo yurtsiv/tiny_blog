@@ -5,9 +5,6 @@
     <tr>
       <th>Title</th>
       <th>Body</th>
-      <th>Createdat</th>
-      <th>Updatedat</th>
-
       <th></th>
     </tr>
   </thead>
@@ -16,9 +13,6 @@
     <tr>
       <td><%= article.title %></td>
       <td><%= article.body %></td>
-      <td><%= article.createdAt %></td>
-      <td><%= article.updatedAt %></td>
-
       <td>
         <%= link "Show", to: Routes.article_path(@conn, :show, article) %>
         <%= link "Edit", to: Routes.article_path(@conn, :edit, article) %>

@@ -12,16 +12,6 @@
     <%= @article.body %>
   </li>
 
-  <li>
-    <strong>Createdat:</strong>
-    <%= @article.createdAt %>
-  </li>
-
-  <li>
-    <strong>Updatedat:</strong>
-    <%= @article.updatedAt %>
-  </li>
-
 </ul>
 
 <span><%= link "Edit", to: Routes.article_path(@conn, :edit, @article) %></span>
