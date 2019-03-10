@@ -1,12 +1,11 @@
 defmodule TinyBlog.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
-  alias TinyBlog.Accounts.Credential
 
   schema "users" do
     field :name, :string
-    field :username, :string
-    has_one :credential, Credential
+    field :email, :string
+    field :encrypted_password, :string
 
     timestamps()
   end
@@ -14,8 +13,9 @@ defmodule TinyBlog.Accounts.User do
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:name, :username])
-    |> validate_required([:name, :username])
-    |> unique_constraint(:username)
+    |> cast(attrs, [:name, :email, :encrypted_password])
+    |> validate_required([:name, :email, :encrypted_password])
+    |> unique_constraint(:name)
+    |> unique_constraint(:email)
   end
 end

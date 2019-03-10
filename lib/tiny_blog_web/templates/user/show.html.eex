@@ -8,13 +8,13 @@
   </li>
 
   <li>
-    <strong>Username:</strong>
-    <%= @user.username %>
+    <strong>Email:</strong>
+    <%= @user.email %>
   </li>
 
   <li>
     <strong>Email:</strong>
-    <%= @user.credential.email %>
+    <%= @user.email %>
   </li>
 
 </ul>
