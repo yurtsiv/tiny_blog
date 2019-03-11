@@ -14,11 +14,12 @@ defmodule TinyBlogWeb.UserController do
     render(conn, "new.html", changeset: changeset)
   end
 
-  def create(conn, %{"user" => user_params}) do
+  def create(conn, %{"user" => user_params} = params) do
     case Accounts.create_user(user_params) do
-      {:ok, user} ->
+      {:ok, _user} ->
         conn
         |> put_flash(:info, "User created successfully.")
+        |> index(params)
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -35,7 +36,7 @@ defmodule TinyBlogWeb.UserController do
     user = Accounts.get_user!(id)
 
     case Accounts.update_user(user, user_params) do
-      {:ok, user} ->
+      {:ok, _user} ->
         conn
         |> put_flash(:info, "User updated successfully.")
         |> redirect(to: Routes.user_path(conn, :index))

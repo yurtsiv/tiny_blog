@@ -25,6 +25,10 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+config :tiny_blog, TinyBlog.Guardian,
+       issuer: "tiny_blog",
+       secret_key: "KehD6wBvpGZOQEFMtpMx3RbvEM+Ff5/32V8COHMacQqGT3d0KKnS9fCHd/A4PDLO"
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"

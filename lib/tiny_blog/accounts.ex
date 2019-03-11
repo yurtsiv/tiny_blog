@@ -33,7 +33,6 @@ defmodule TinyBlog.Accounts do
 
       iex> get_user!(456)
       ** (Ecto.NoResultsError)
->
   """
   def get_user!(id) do
     Repo.get!(User, id)
