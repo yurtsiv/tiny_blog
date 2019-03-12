@@ -4,8 +4,9 @@ defmodule TinyBlogWeb.ArticleController do
   alias TinyBlog.Articles
   alias TinyBlog.Articles.Article
 
-  def index(conn, _params) do
-    articles = Articles.list_articles()
+  def index(conn, params) do
+    page = params["page"] || 1
+    articles = Articles.list_articles(page, 9)
     render(conn, "index.html", articles: articles)
   end
 

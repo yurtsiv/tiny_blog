@@ -1,5 +1,5 @@
 <div class="articles-container">
-  <%= for article <- @articles do %>
+  <%= for article <- @articles.list do %>
     <%= link render("article_preview.html", article: article),
             to: Routes.article_path(@conn, :show, article),
             class: "article-preview"

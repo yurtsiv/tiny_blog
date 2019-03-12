@@ -5,20 +5,22 @@ defmodule TinyBlog.Articles do
 
   import Ecto.Query, warn: false
   alias TinyBlog.Repo
-
   alias TinyBlog.Articles.Article
+  alias TinyBlog.Pagination
 
   @doc """
   Returns the list of articles.
 
   ## Examples
 
-      iex> list_articles()
+      iex> list_articles(1, 15)
       [%Article{}, ...]
 
   """
-  def list_articles do
-    Repo.all(Article)
+  def list_articles(page, per_page) do
+    Article
+    |> order_by(desc: :inserted_at)
+    |> Pagination.page(page, per_page: per_page)
   end
 
   @doc """
