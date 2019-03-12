@@ -1,5 +1,6 @@
 <h1>Listing Users</h1>
 
+<p><%= get_flash(@conn, :error) %></p>
 <table>
   <thead>
     <tr>
@@ -16,8 +17,9 @@
       <td><%= user.email %></td>
 
       <td>
-        <%= link "Edit", to: Routes.user_path(@conn, :edit, user) %>
-        <%= link "Delete", to: Routes.user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"] %>
+        <%= if user.id !== Map.get(@current_user, :id) do %>
+          <%= link "Delete", to: Routes.user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"] %>
+        <% end %>
       </td>
     </tr>
 <% end %>

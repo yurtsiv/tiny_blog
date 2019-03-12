@@ -20,7 +20,7 @@ defmodule TinyBlogWeb.Router do
   scope "/admin", TinyBlogWeb do
     pipe_through([:browser, :auth, :ensure_auth])
 
-    resources "/users", UserController, except: [:show]
+    resources "/users", UserController, except: [:show, :edit]
     resources "/articles", ArticleController, except: [:index, :show]
   end
   
