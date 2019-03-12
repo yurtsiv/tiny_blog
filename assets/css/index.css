@@ -1,3 +1,8 @@
+.content-container {
+    display: flex;
+    justify-content: center;
+}
+
 .header-container {
     display: flex;
     align-items: center;
@@ -8,4 +13,32 @@
 .header-logo {
     font-family: Satisfy;
     font-size: 5rem;
+}
+
+.articles-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+}
+
+.article-preview {
+    border-radius: 5px;
+    border-bottom: 1px solid #f1f1f1;
+    transition: .1s linear;
+}
+
+.article-preview:hover {
+    border-bottom: 1px solid #ccc;
+}
+
+.article-preview img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.article-preview-title {
+    padding-left: 1rem;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
