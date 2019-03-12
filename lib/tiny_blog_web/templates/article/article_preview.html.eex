@@ -1,4 +1,4 @@
 <img src="http://i.imgur.com/Vcx0y1U.jpg" alt="">
 <p class="article-preview-title">
-	<%= Map.get(@article, :title)%> 
+	<%= @article.title %> 
 </p>
