@@ -6,3 +6,5 @@
     %>
   <% end %>
 </div>
+
+<%= render("pagination.html", conn: @conn, params: @articles)%>

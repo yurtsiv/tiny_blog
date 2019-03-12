@@ -6,7 +6,7 @@ defmodule TinyBlogWeb.ArticleController do
 
   def index(conn, params) do
     page = params["page"] || 1
-    articles = Articles.list_articles(page, 9)
+    articles = Articles.list_articles(page, 6)
     render(conn, "index.html", articles: articles)
   end
 

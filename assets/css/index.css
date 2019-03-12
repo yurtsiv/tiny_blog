@@ -1,6 +1,7 @@
 .content-container {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .header-container {
@@ -25,6 +26,7 @@
     border-radius: 5px;
     border-bottom: 1px solid #f1f1f1;
     transition: .1s linear;
+    box-shadow: 0px 0px 44px -34px rgba(0,0,0,1);
 }
 
 .article-preview:hover {
@@ -41,4 +43,12 @@
     padding-left: 1rem;
     font-weight: bold;
     font-size: 1.5rem;
+}
+
+.pagination-container {
+    padding: 50px;
+}
+
+.page-number {
+    margin: 0 15px 0 15px;
 }

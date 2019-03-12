@@ -1,0 +1,13 @@
+<div class="pagination-container">
+    <%= if @params.has_previous do %>
+        <%= link "First", to: first_page_link(@conn, @params) %> | 
+        <%= link "Previous", to: prev_page_link(@conn, @params) %>
+    <% end %>
+
+    <b class="page-number"><%= @params.page %></b>
+
+    <%= if @params.has_next do %>
+        <%= link "Next", to: next_page_link(@conn, @params) %> |
+        <%= link "Last", to: last_page_link(@conn, @params) %>
+    <% end %>
+</div>

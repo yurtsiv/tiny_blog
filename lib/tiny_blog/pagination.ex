@@ -22,8 +22,10 @@ defmodule TinyBlog.Pagination do
 		results = query(query, page, per_page: per_page)
 		has_next = length(results) > per_page
 		has_previous = page > 1
+		count = Repo.one(from(t in subquery(query), select: count("*")))
 		
 		%{
+			last_page: ceil(count / per_page),
 			has_next: has_next,
 			has_previous: has_previous,
 			prev_page: page - 1,
