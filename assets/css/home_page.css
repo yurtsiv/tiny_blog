@@ -1,6 +1,23 @@
+@media only screen and (max-width: 720px) {
+    .articles-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1080px) {
+    .articles-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 1080px) {
+    .articles-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
 .articles-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2rem;
 }
 

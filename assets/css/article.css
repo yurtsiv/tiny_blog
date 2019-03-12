@@ -4,7 +4,24 @@
     object-fit: cover;
 }
 
+@media only screen and (max-width: 720px) {
+    .article-content {
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1080px) {
+    .article-content {
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width: 1080px) {
+    .article-content {
+        width: 50%;
+    }
+}
+
 .article-content {
-    width: 50%;
     padding-bottom: 50px;
 }
