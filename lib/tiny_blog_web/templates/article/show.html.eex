@@ -1,18 +1,8 @@
-<h1>Show Article</h1>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Monasterio_Khor_Virap%2C_Armenia%2C_2016-10-01%2C_DD_25.jpg/1920px-Monasterio_Khor_Virap%2C_Armenia%2C_2016-10-01%2C_DD_25.jpg" alt="" class="article-header-image">
 
-<ul>
-
-  <li>
-    <strong>Title:</strong>
-    <%= @article.title %>
-  </li>
-
-  <li>
-    <strong>Body:</strong>
+<div class="article-content">
+  <h1 class="article-title"><%= @article.title %></h1>
+  <div class="article-body">
     <%= @article.body %>
-  </li>
-
-</ul>
-
-<span><%= link "Edit", to: Routes.article_path(@conn, :edit, @article) %></span>
-<span><%= link "Back", to: Routes.article_path(@conn, :index) %></span>
+  </div>
+</div>

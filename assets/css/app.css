@@ -1,4 +1,6 @@
 /* This file is for your main application css. */
 
-@import "./index.css";
-@import "./common.css";
+@import "./global.css";
+@import "./layout.css";
+@import "./home_page.css";
+@import "./article.css";
