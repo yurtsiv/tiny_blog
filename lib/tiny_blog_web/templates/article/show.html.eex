@@ -6,3 +6,5 @@
     <%= @article.body %>
   </div>
 </div>
+
+<%= link "Back", to: Routes.article_path(@conn, :index)%>
