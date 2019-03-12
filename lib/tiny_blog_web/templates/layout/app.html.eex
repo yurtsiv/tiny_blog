@@ -9,6 +9,9 @@
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
   </head>
   <body>
+    <%= if Guardian.Plug.current_resource(@conn) !== nil do %>
+      <%= link "Sign Out", to: Routes.session_path(@conn, :delete), method: :delete%>
+    <% end %>
     <header class="header-container">
       <a href="/" class="header-logo">
         Tiny blog

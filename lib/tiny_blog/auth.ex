@@ -1,6 +1,6 @@
 defmodule TinyBlog.Auth do
   import Plug.Conn
-  import Ecto.Query
+  require Ecto.Query
   alias TinyBlog.Repo
   alias TinyBlog.Accounts.User
 
@@ -24,5 +24,9 @@ defmodule TinyBlog.Auth do
     conn
     |> TinyBlog.Auth.Guardian.Plug.sign_in(user)
     |> assign(:current_user, user)
+  end
+
+  def logout(conn) do
+	  TinyBlog.Auth.Guardian.Plug.sign_out(conn)
   end
 end

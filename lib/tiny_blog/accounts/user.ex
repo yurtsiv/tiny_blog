@@ -1,7 +1,6 @@
 defmodule TinyBlog.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
-  alias TinyBlog.Articles.Article
 
   schema "users" do
     field :name, :string

@@ -9,17 +9,30 @@ defmodule TinyBlogWeb.Router do
     plug :put_secure_browser_headers
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
+  pipeline :auth do
+    plug TinyBlog.Auth.Pipeline
   end
 
+  pipeline :ensure_auth do
+    plug Guardian.Plug.EnsureAuthenticated
+  end
+
+  scope "/admin", TinyBlogWeb do
+    pipe_through([:browser, :auth, :ensure_auth])
+
+    resources "/users", UserController, except: [:show]
+    resources "/articles", ArticleController, except: [:index, :show]
+  end
+  
   scope "/", TinyBlogWeb do
-    pipe_through :browser
+    pipe_through [:browser, :auth]
 
     get "/", ArticleController, :index
-    resources "/users", UserController, except: [:show]
-    resources "/articles", ArticleController
-    resources "/session", SessionController, only: [:new, :create]
+    resources "/articles", ArticleController, only: [:index, :show]
+
+    get "/session/new", SessionController, :new
+    post "/session", SessionController, :create
+    delete "/session", SessionController, :delete
   end
 
   # Other scopes may use custom stacks.

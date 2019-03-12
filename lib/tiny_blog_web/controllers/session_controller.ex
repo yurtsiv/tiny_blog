@@ -23,5 +23,11 @@ defmodule TinyBlogWeb.SessionController do
         |> put_flash(:error, reason)
         |> render("new.html")
     end
-  end
+	end
+	
+	def delete(conn, _params) do
+		conn
+		|> TinyBlog.Auth.logout()
+    |> redirect(to: Routes.article_path(conn, :index))
+	end
 end
