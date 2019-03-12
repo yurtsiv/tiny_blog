@@ -6,8 +6,18 @@ defmodule TinyBlog.ArticlesTest do
   describe "articles" do
     alias TinyBlog.Articles.Article
 
-    @valid_attrs %{body: "some body", createdAt: ~D[2010-04-17], title: "some title", updatedAt: ~D[2010-04-17]}
-    @update_attrs %{body: "some updated body", createdAt: ~D[2011-05-18], title: "some updated title", updatedAt: ~D[2011-05-18]}
+    @valid_attrs %{
+      body: "some body",
+      createdAt: ~D[2010-04-17],
+      title: "some title",
+      updatedAt: ~D[2010-04-17]
+    }
+    @update_attrs %{
+      body: "some updated body",
+      createdAt: ~D[2011-05-18],
+      title: "some updated title",
+      updatedAt: ~D[2011-05-18]
+    }
     @invalid_attrs %{body: nil, createdAt: nil, title: nil, updatedAt: nil}
 
     def article_fixture(attrs \\ %{}) do

@@ -19,6 +19,7 @@ defmodule TinyBlogWeb.Router do
     get "/", ArticleController, :index
     resources "/users", UserController, except: [:show]
     resources "/articles", ArticleController
+    resources "/session", SessionController, only: [:new, :create]
   end
 
   # Other scopes may use custom stacks.

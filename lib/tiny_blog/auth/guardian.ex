@@ -1,4 +1,4 @@
-defmodule Rumbl.Auth.Guardian do
+defmodule TinyBlog.Auth.Guardian do
   @moduledoc false
 
   use Guardian, otp_app: :tiny_blog

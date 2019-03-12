@@ -1,0 +1,12 @@
+<%= form_for @conn, Routes.session_path(@conn, :create), fn f -> %>
+  <h1><%= get_flash(@conn, :error) %></h1>
+  <label>
+    Email: <%= text_input f, :email, type: :email %>
+  </label>
+
+  <label>
+    Password: <%= password_input f, :password %>
+  </label>
+
+  <%= submit "Submit" %>
+<% end %>

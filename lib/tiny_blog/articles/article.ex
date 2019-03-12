@@ -2,7 +2,6 @@ defmodule TinyBlog.Articles.Article do
   use Ecto.Schema
   import Ecto.Changeset
 
-  
   schema "articles" do
     field :body, :string
     field :title, :string
@@ -14,6 +13,6 @@ defmodule TinyBlog.Articles.Article do
   def changeset(article, attrs) do
     article
     |> cast(attrs, [:title, :body])
-    |> validate_required([:title, :body]) 
+    |> validate_required([:title, :body])
   end
 end

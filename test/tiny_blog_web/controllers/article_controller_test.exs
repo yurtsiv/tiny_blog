@@ -3,8 +3,18 @@ defmodule TinyBlogWeb.ArticleControllerTest do
 
   alias TinyBlog.Articles
 
-  @create_attrs %{body: "some body", createdAt: ~D[2010-04-17], title: "some title", updatedAt: ~D[2010-04-17]}
-  @update_attrs %{body: "some updated body", createdAt: ~D[2011-05-18], title: "some updated title", updatedAt: ~D[2011-05-18]}
+  @create_attrs %{
+    body: "some body",
+    createdAt: ~D[2010-04-17],
+    title: "some title",
+    updatedAt: ~D[2010-04-17]
+  }
+  @update_attrs %{
+    body: "some updated body",
+    createdAt: ~D[2011-05-18],
+    title: "some updated title",
+    updatedAt: ~D[2011-05-18]
+  }
   @invalid_attrs %{body: nil, createdAt: nil, title: nil, updatedAt: nil}
 
   def fixture(:article) do
@@ -75,6 +85,7 @@ defmodule TinyBlogWeb.ArticleControllerTest do
     test "deletes chosen article", %{conn: conn, article: article} do
       conn = delete(conn, Routes.article_path(conn, :delete, article))
       assert redirected_to(conn) == Routes.article_path(conn, :index)
+
       assert_error_sent 404, fn ->
         get(conn, Routes.article_path(conn, :show, article))
       end
