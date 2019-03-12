@@ -1,0 +1,2 @@
+<%= link "New Article", to: Routes.article_path(@conn, :new) %> | 
+<%= link "Sign Out", to: Routes.session_path(@conn, :delete), method: :delete %>
