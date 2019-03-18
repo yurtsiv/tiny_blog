@@ -24,4 +24,5 @@
 
 .article-content {
     padding-bottom: 50px;
+    word-wrap: break-word;
 }
