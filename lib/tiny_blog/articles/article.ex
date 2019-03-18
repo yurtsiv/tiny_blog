@@ -5,6 +5,7 @@ defmodule TinyBlog.Articles.Article do
   schema "articles" do
     field :body, :string
     field :title, :string
+    field :header_img_url, :string
 
     timestamps()
   end
@@ -12,7 +13,7 @@ defmodule TinyBlog.Articles.Article do
   @doc false
   def changeset(article, attrs) do
     article
-    |> cast(attrs, [:title, :body])
+    |> cast(attrs, [:title, :body, :header_img_url])
     |> validate_required([:title, :body])
   end
 end

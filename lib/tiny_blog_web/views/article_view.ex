@@ -1,6 +1,10 @@
 defmodule TinyBlogWeb.ArticleView do
   use TinyBlogWeb, :view
 
+  def is_logged_in(conn, _params) do
+    Guardian.Plug.current_resource(conn) !== nil 
+  end  
+
   def prev_page_link(conn, params) do
     link_to_page(conn, params.prev_page)
   end

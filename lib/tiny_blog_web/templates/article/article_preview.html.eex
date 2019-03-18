@@ -1,4 +1,4 @@
-<img src="http://i.imgur.com/Vcx0y1U.jpg" alt="">
+<img src=<%= @article.header_img_url %> alt="">
 <p class="article-preview-title">
 	<%= @article.title %> 
 </p>

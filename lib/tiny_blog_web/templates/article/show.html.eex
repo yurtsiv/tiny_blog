@@ -1,4 +1,4 @@
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Monasterio_Khor_Virap%2C_Armenia%2C_2016-10-01%2C_DD_25.jpg/1920px-Monasterio_Khor_Virap%2C_Armenia%2C_2016-10-01%2C_DD_25.jpg" alt="" class="article-header-image">
+<img src=<%= @article.header_img_url %> alt="" class="article-header-image">
 
 <div class="article-content">
   <h1 class="article-title"><%= @article.title %></h1>
@@ -7,4 +7,10 @@
   </div>
 </div>
 
-<%= link "Back", to: Routes.article_path(@conn, :index)%>
+<div>
+  <%= if is_logged_in(@conn, %{}) do %>
+    <%= link "Edit", to: Routes.article_path(@conn, :edit, @article) %>
+  <% end %>
+  
+  <%= link "Back", to: Routes.article_path(@conn, :index)%>
+</div>
