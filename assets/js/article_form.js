@@ -6,7 +6,7 @@ const inputs = {
 
 const handlePreviewClick = () => {
     const form = document.getElementById("article-form");
-    const article_preview = document.getElementById("article-preview");
+    const article_preview = document.getElementById("article-form-preview");
 
     const img_elem = article_preview.getElementsByTagName("img")[0];
     const title_elem = article_preview.getElementsByClassName("article-title")[0];

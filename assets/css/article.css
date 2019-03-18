@@ -27,13 +27,18 @@
     word-wrap: break-word;
 }
 
+.article-body {
+    margin-top: 50px;
+    line-height: 1.5rem;
+}
+
 .article-form-container {
     width: 95%;
     display: flex;
     justify-content: space-between;
 }
 
-#article-preview {
+#article-form-preview {
     width: 50%; 
 }
 
