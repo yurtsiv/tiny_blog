@@ -10,6 +10,11 @@
 <div>
   <%= if is_logged_in(@conn, %{}) do %>
     <%= link "Edit", to: Routes.article_path(@conn, :edit, @article) %>
+    <%= link "Delete",
+              to: Routes.article_path(@conn, :delete, @article),
+              method: :delete,
+              data: [confirm: "Are you sure?"]
+    %>
   <% end %>
   
   <%= link "Back", to: Routes.article_path(@conn, :index)%>
