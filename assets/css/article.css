@@ -26,3 +26,13 @@
     padding-bottom: 50px;
     word-wrap: break-word;
 }
+
+.article-form {
+    width: 40%;
+}
+
+.article-form textarea {
+    min-height: 300px;
+    box-sizing: border-box;
+    resize: vertical;
+}
