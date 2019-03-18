@@ -27,11 +27,21 @@
     word-wrap: break-word;
 }
 
-.article-form {
-    width: 40%;
+.article-form-container {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
 }
 
-.article-form textarea {
+#article-preview {
+    width: 50%; 
+}
+
+#article-form {
+    width: 45%;
+}
+
+#article-form textarea {
     min-height: 300px;
     box-sizing: border-box;
     resize: vertical;

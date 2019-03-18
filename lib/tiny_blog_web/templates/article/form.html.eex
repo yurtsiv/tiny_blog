@@ -1,26 +1,33 @@
-<%= form_for @changeset, @action, [class: "article-form"], fn f -> %>
-  <%= if @changeset.action do %>
-    <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below.</p>
+<div class="article-form-container">
+  <%= form_for @changeset, @action, [id: "article-form"], fn f -> %>
+    <%= if @changeset.action do %>
+      <div class="alert alert-danger">
+        <p>Oops, something went wrong! Please check the errors below.</p>
+      </div>
+    <% end %>
+
+    <%= label f, :title %>
+    <%= text_input f, :title, class: "article-title-input" %>
+    <%= error_tag f, :title %>
+
+    <%= label f, :header_img_url %>
+    <%= text_input f, :header_img_url %>
+    <%= error_tag f, :header_img_url %>
+
+    <%= label f, :body %>
+    <%= textarea f, :body, class: "article-body-input" %>
+    <%= error_tag f, :body %>
+
+    <div>
+      <%= submit "Save" %>
+      <button type="button" id="preview-article-btn">
+        Preview
+      </button>
     </div>
   <% end %>
-
-  <%= label f, :title %>
-  <%= text_input f, :title, class: "article-title-input" %>
-  <%= error_tag f, :title %>
-
-  <%= label f, :header_img_url %>
-  <%= text_input f, :header_img_url %>
-  <%= error_tag f, :header_img_url %>
-
-  <%= label f, :body %>
-  <%= textarea f, :body, class: "article-body-input" %>
-  <%= error_tag f, :body %>
-
-  <div>
-    <%= submit "Save" %>
-    <button type="button" id="preview-article-btn">
-      Preview
-    </button>
+  <div id="article-preview">
+    <img class="article-header-image" src="" alt="">
+    <h2 class="article-title"></h2>
+    <div class="article-body"></div>
   </div>
-<% end %>
+</div>
