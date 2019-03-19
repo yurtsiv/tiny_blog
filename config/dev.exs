@@ -73,3 +73,7 @@ config :tiny_blog, TinyBlog.Repo,
   database: "tiny_blog_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :tiny_blog, TinyBlog.Auth.Guardian,
+  issuer: "tiny_blog",
+  secret_key: "+/X206RVPN1/a52VvoekSOdd0Yf+tEh6OJxIewExcedu/0j0G75TuWStqh7ZojWi"

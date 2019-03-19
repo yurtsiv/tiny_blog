@@ -25,10 +25,6 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
-config :tiny_blog, TinyBlog.Auth.Guardian,
-  issuer: "tiny_blog",
-  secret_key: "KehD6wBvpGZOQEFMtpMx3RbvEM+Ff5/32V8COHMacQqGT3d0KKnS9fCHd/A4PDLO"
-
 config :tiny_blog, TinyBlog.Auth.Pipeline,
   module: TinyBlog.Auth.Guardian,
   error_handler: TinyBlog.Auth.AuthErrorHandler
