@@ -1,1 +1,1 @@
-[blog.yurtsiv.me](http://blog.yurtsiv.me)
+[blog.yurtsiv.me](http://blog.yurtsiv.me){:traget="_blank"}
