@@ -8,17 +8,13 @@ defmodule TinyBlog.ArticlesTest do
 
     @valid_attrs %{
       body: "some body",
-      createdAt: ~D[2010-04-17],
       title: "some title",
-      updatedAt: ~D[2010-04-17]
     }
     @update_attrs %{
       body: "some updated body",
-      createdAt: ~D[2011-05-18],
       title: "some updated title",
-      updatedAt: ~D[2011-05-18]
     }
-    @invalid_attrs %{body: nil, createdAt: nil, title: nil, updatedAt: nil}
+    @invalid_attrs %{body: nil, created_at: nil, title: nil, updated_at: nil}
 
     def article_fixture(attrs \\ %{}) do
       {:ok, article} =
@@ -31,7 +27,15 @@ defmodule TinyBlog.ArticlesTest do
 
     test "list_articles/0 returns all articles" do
       article = article_fixture()
-      assert Articles.list_articles() == [article]
+      assert Articles.list_articles(1, 10) == %{
+        page: 1,
+        has_next: false,
+        has_previous: false,
+        last_page: 1,
+        next_page: 2,
+        prev_page: 0,
+        list: [article]
+      }
     end
 
     test "get_article!/1 returns the article with given id" do
@@ -42,9 +46,7 @@ defmodule TinyBlog.ArticlesTest do
     test "create_article/1 with valid data creates a article" do
       assert {:ok, %Article{} = article} = Articles.create_article(@valid_attrs)
       assert article.body == "some body"
-      assert article.createdAt == ~D[2010-04-17]
       assert article.title == "some title"
-      assert article.updatedAt == ~D[2010-04-17]
     end
 
     test "create_article/1 with invalid data returns error changeset" do
@@ -55,9 +57,7 @@ defmodule TinyBlog.ArticlesTest do
       article = article_fixture()
       assert {:ok, %Article{} = article} = Articles.update_article(article, @update_attrs)
       assert article.body == "some updated body"
-      assert article.createdAt == ~D[2011-05-18]
       assert article.title == "some updated title"
-      assert article.updatedAt == ~D[2011-05-18]
     end
 
     test "update_article/2 with invalid data returns error changeset" do

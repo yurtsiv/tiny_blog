@@ -6,7 +6,7 @@ defmodule TinyBlog.AccountsTest do
   describe "users" do
     alias TinyBlog.Accounts.User
 
-    @valid_attrs %{name: "some name", email: "some@email.com"}
+    @valid_attrs %{name: "some name", email: "some@email.com", encrypted_password: "somepswd"}
     @update_attrs %{name: "some updated name", email: "someupdated@email.com"}
     @invalid_attrs %{name: nil, email: nil}
 
